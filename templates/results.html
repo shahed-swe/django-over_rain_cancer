@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br>
+<section class="ftco-services">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-md-4 ftco-animate py-5 nav-link-wrap fadeInUp ftco-animated">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link px-4 active" id="v-pills-master-tab" data-toggle="pill" href="#v-pills-master" role="tab" aria-controls="v-pills-master" aria-selected="true"><span class="mr-3 flaticon-cardiogram"></span> Result</a>
+            </div>
+          </div>
+          <div class="col-md-8 ftco-animate p-4 p-md-5 d-flex align-items-center fadeInUp ftco-animated">
+            
+            <div class="tab-content pl-md-5" id="v-pills-tabContent">
+
+              <div class="tab-pane fade show active py-5" id="v-pills-master" role="tabpanel" aria-labelledby="v-pills-master-tab">
+                <span class="icon mb-3 d-block flaticon-cardiogram"></span>
+                <h2 class="mb-4">Results For Patient</h2>
+                <p>According to catboostclassifier(gradient boosting algorithm) :</p>
+                {% if prediction == 1 %}
+                    <p style="color:red">YES,you are probably Affected by ovarian Cancer!!!</p>
+                {% elif prediction == 0%}
+                    <p style="color:green">No,you are probably not Affected by ovarian Cancer!!</p>
+			    {% endif %}
+			    {% if score <= 17 %}
+                    <p style="color:green">Your RISK LEVEL is : Low and your score is : {{ score }} out of 32(max) </p>
+                {% elif score > 17 and score <= 24 %}
+                    <p style="color:green">Your RISK LEVEL is : MEDIUM and your score is :{{ score }} out of 32(max)</p>
+			    {% elif score > 24 and score <= 32 %}
+                    <p style="color:red">Your RISK LEVEL is :  HIGH  and your score is :{{ score }} out of 32(max)</p>
+			    {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

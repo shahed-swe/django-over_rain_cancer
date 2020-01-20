@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <div class="container py-3" id="feedback">
+
+
+        <div class="row">
+            <div class="col-12 text-center mb-3">
+                <h1 style="color:red">ovarian cancer predictor</h1>
+            </div>
+            <div class="col-12 col-lg-8 m-auto">
+                <div class="card">
+                    <div class="card-body">
+
+
+                        <form action="predict">{% csrf_token %}
+
+                            <div class="form-group mb-3">
+                                <small class="text-muted">Menarche starts? </small>
+                                <select class="form-control rounded-0 shadow-none" id="menarchestarts1"
+                                    name="menarchestarts1">
+                                    <option value="0">Early</option>
+                                    <option value="1">Late</option>
+                                    <option value="2">Normal</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <small class="text-muted">Oral Contraception?</small>
+                                <select class="form-control rounded-0 shadow-none" id="oralc" name="oralc1">
+                                    <option value="0">yes</option>
+                                    <option value="1">no</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <small class="text-muted">Diet Maintain?</small>
+                                <select class="form-control rounded-0 shadow-none" id="Diet" name="Diet">
+                                    <option value="0">yes</option>
+                                    <option value="1">no</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <small class="text-muted">Affected By Breast Cancer?</small>
+                                <select class="form-control rounded-0 shadow-none" id="brcancer" name="brcancer">
+                                    <option value="0">yes</option>
+                                    <option value="1">no</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <small class="text-muted">Affected By cervical Cancer?</small>
+                                <select class="form-control rounded-0 shadow-none" id="carcancer" name="carcancer">
+                                    <option value="0">yes</option>
+                                    <option value="1">no</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <small class="text-muted">Cancer History In family?</small>
+                                <select class="form-control rounded-0 shadow-none" id="canhist" name="canhist">
+                                    <option value="0">yes</option>
+                                    <option value="1">no</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <small class="text-muted">Education level?</small>
+                                <select class="form-control rounded-0 shadow-none" id="edulev" name="edulev">
+                                    <option value="0">yes</option>
+                                    <option value="1">no</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <small class="text-muted">Age of Husband?</small>
+                                <select class="form-control rounded-0 shadow-none" id="husage" name="husage">
+                                    <option value="0">46-60</option>
+                                    <option value="1">31-45</option>
+                                    <option value="2">below 30</option>
+                                    <option value="3">above 60</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <small class="text-muted">Menopause End age?</small>
+                                <select class="form-control rounded-0 shadow-none" id="menendage" name="menenage">
+                                    <option value="0">40-51</option>
+                                    <option value="1">before 40</option>
+                                    <option value="2">after 51</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <small class="text-muted">Food contains high fat?</small>
+                                <select class="form-control rounded-0 shadow-none" id="highfat" name="highfat">
+                                    <option value="0">no</option>
+                                    <option value="1">yes</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <small class="text-muted">Abortion?</small>
+                                <select class="form-control rounded-0 shadow-none" id="abrt" name="abrt">
+                                    <option value="0">no</option>
+                                    <option value="1">yes</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-block rounded-0 shadow-none">Submit</button>
+
+                        </form>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+{% endblock %}
